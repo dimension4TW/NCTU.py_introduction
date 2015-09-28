@@ -27,6 +27,11 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+<script src="./asset/codemirror/lib/codemirror.js"></script>
+<link rel="stylesheet" href="./asset/codemirror/lib/codemirror.css">
+<script src="./asset/codemirror/mode/python/python.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -40,7 +45,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#Team">I CUBE NCTU.py</a>
+            <a class="navbar-brand page-scroll" href="./">I CUBE NCTU.py</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -70,28 +75,30 @@
 
 <blockquote id="About">
     <div class="container">
-        <h2 style = "text-align: center" class="lead" >What is NCTU.py ?</h2>
-        <hr>
-        <br>
-        <p style = "text-align: center" >對大多數同學來說，第一個學習的程式語言是C，我們對程式的印象依舊停留在黑白的畫面與一大堆複雜的語法。<br><br>
-        而<mark>Python</mark>是一個強大的語言，所有人都可以簡單上手，然而能做的事情卻不簡單，舉凡網頁開發、開發視窗程式、遊戲開發、甚至最近很紅的大數據、機器學習、物聯網等等都可以透過<mark>Python</mark>現成的套件完成！<br><br>
-        我們將在這堂課程，從<mark>Python</mark>最簡單的語法開始介紹，透過一次次課程與作業(寫小遊戲)，最後完成聲光效果十足的「星際大戰」。
-        py是<mark>Python</mark>程式的副檔名，而NCTU.py旨在交通大學推廣<mark>Python</mark>，我們是由一群熱血的學生組成，希望帶給大家寫程式的樂趣。<br><br>
+        <h2 style="text-align:center" class="lead">What is NCTU.py ?</h2>
+        <hr><br>
+        <p style="text-align:center">
+        對大多數同學來說，第一個學習的程式語言是C，對程式的印象依舊停留在黑白的畫面與一大堆複雜的語法。<br><br>
+        而<mark>Python</mark>是一個強大的語言，所有人都可以簡單上手，然而能做的事情卻不簡單。 <br><br>
+        舉凡網頁開發、開發視窗程式、遊戲開發、甚至最近很紅的大數據、機器學習、物聯網等等都可以透過<mark>Python</mark>現成的套件完成！<br><br>
+        我們將在這堂課程，從<mark>Python</mark>最簡單的語法開始介紹，透過一次次課程與作業(寫小遊戲)，最後完成聲光效果十足的「星際大戰」。<br><br>
+        py 是<mark>Python</mark>程式的副檔名，而NCTU.py旨在推廣<mark>Python</mark>，我們是由一群熱血的學生組成，從 I Cube 萌芽，希望帶給大家寫程式的樂趣。<br><br>
         <strong>Welcome to join the world of python !</strong></p>
         <br><br>
-        <a href="#Team" type="button" class="btn btn-primary btn-block">Who we are ?</a>
+        <a href="#Introduction" type="button" class="btn btn-primary btn-block page-scroll">What is python ?</a>
     </div>
 
 </blockquote>
 <section id="Introduction">
     <div class = "container">
         <div class="row" style="margin-bottom: 40px">
-            <h2 class="glyphicon glyphicon-arrow-right"> 什麼是Python?</h2>    
+            <h2 class="glyphicon glyphicon-arrow-right"> 什麼是 Python ?</h2>    
         </div>
         <br><br><br>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <p style="color:#FF3300">Python的博大精深分三言兩語能夠道盡，但凡事都得有個起手式，所以到底什麼事Python呢？看看資深Python工程師Tim Peters怎麼說：</p>
+                <p style="color:#FF3300">Python的博大精深非三言兩語能夠道盡，但凡事都得有個起手式，所以到底什是 Python 呢？</p>
+                <p style="color:#FF3300">看看資深 Python 工程師 Tim Peters怎麼說吧！</p>
                 <br><br>
                 <p class="lead">The Zen of Python</p>
                 <blockquote>
@@ -115,46 +122,28 @@
                     If the implementation is easy to explain, it may be a good idea.<br>
                     Namespaces are one honking great idea -- let's do more of those!</p>
                     <footer>Tim Peters</footer>
-
                 </blockquote>
                 <br>
-
                 <p class="lead">Python 之道 (POT 眾譯版)</p>
-
-
                 <blockquote>
                     <p>
                     美麗優於醜陋，明講好過暗諭。<br>
-
                     簡潔者為上，複雜者次之，繁澀者為下。<br>
-
                     平舖善於層疊，勻散勝過稠密；以致輕鬆易讀。<br>
-
                     特例難免但不可打破原則，務求純淨卻不可不切實際。<br>
-
                     斷勿使錯誤靜靜流逝，除非有意如此。<br>
-
                     在模擬兩可之間，拒絕猜測的誘惑。<br>
-
                     總會有一種明確的寫法，最好也只有一種，<br>
-
                     但或須細想方可得。<br>
-
                     凡事雖應三思後行，但坐而言不如起而行。<br>
-
                     難以解釋的實作方式，必定是壞方法。<br>
-
                     容易解釋的實作方式，可能是好主意。<br>
-
                     命名空間讚，吾人多實用。<br>
                     </p>
-
                 </blockquote>
                 <br><br>
-                <p style="color:#FF3300">
-                相信各位在接觸Python後，都能體會這這篇所闡述的Python精神指標，句句都是金玉良言。<br>
-                接下來的這幾則漫畫，將令你對於Python的強大有更進一步的瞭解：<br>
-                </p>
+                <p style="color:#FF3300">相信各位在接觸Python後，都能體會這這篇所闡述的Python精神指標，句句都是金玉良言。</p>
+                <p style="color:#FF3300">接下來的這幾則漫畫，將使你對於Python的強大有更進一步的瞭解：</p>
                 <br><br>
                 <img src="./asset/img/what_is_python.jpg" class="img-responsive">
                 <br><br><br><br>
@@ -163,37 +152,76 @@
                 <img src="./asset/img/about%20python.png">
                 <br><br><br><br>
                 <img src="./asset/img/power%20of%20python.jpg" class="img-responsive">
-                <p style="color:#FF3300">看到這裡，相信大家都已經迫不及待的想拿起這把強大的武器開始揮舞了吧！那事不疑遲，讓我們開始吧！</p>
-                <br><br><br><br><br><br>
+                <p style="color:#FF3300">看到這裡，相信大家都已經迫不及待的想拿起這把強大的武器開始揮舞了吧！</p>
+                <p style="color:#FF3300">那事不疑遲，讓我們開始吧！</p>
             </div>
         </div>
-
-        <div class="container">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/N4mEzFDjqtA"frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-
     </div> 
 </section>
 
 <section id="Demo">
     <div class="container">
-        <div class="row" style="margin-bottom: 40px">
-            <h2 class="glyphicon glyphicon-arrow-right"> 我們的團隊</h2>
+        <div class="row" style="margin-bottom: 20px">
+            <h2 class="glyphicon glyphicon-arrow-right"> What you might make!</h2>
         </div>
-
-        <div class="container" style="margin-top: 100px; margin-bottom: 100px">
-            <div class="col-sm-5"></div>
-            <div class="col-sm-3">
-                <img src="./asset/img/icube.png" class="img-responsive img-circle" alt>
-                <h4 style="text-align: center">ICUBE</h4>
-                <p style="text-align: center">NCTU CS</p>
-                <a class="glyphicon glyphicon-comment ;btn btn-primary btn-lg" href ="https://www.facebook.com/nctuicube?fref=ts" style="margin-left: 45%; margin-top:30px"></a>
-
+        <div class="container" style="margin-top: 20px; margin-bottom: 20px">
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <textarea id="code"></textarea><br>
+                        <button type="button" onclick="runit()">Run</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <pre id="output" ></pre>
+                    <!-- <pre id="log" ></pre> -->
+                    <canvas id="mycanvas" ></mycanvas>
+                    </div>
+                </div>
             </div>
-        </div>
+            <script type="text/javascript">
+var code = CodeMirror.fromTextArea(document.getElementById("code"),{
+lineNumbers: true,
+mode:  "python"
+});
+function outf(text) {
+    var mypre = document.getElementById("output");
+    mypre.innerHTML = mypre.innerHTML + text;
+}
+function builtinRead(x) {
+    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+        throw "File not found: '" + x + "'";
+    return Sk.builtinFiles["files"][x];
+}
+function runit() {
+    var mypre = document.getElementById("output");
+    var logger = document.getElementById("output");
+    mypre.innerHTML = "";
+    logger.innerHTML = "";
+    try{
+        var prog = code.doc.getValue();
+        Sk.canvas = "mycanvas";
+        Sk.pre = "output";
+        Sk.configure({output:outf, read:builtinRead});
+        eval(Sk.importMainWithBody("<stdin>",false,prog));
+    }
+    catch(message){
+        logger.innerHTML="ERROR:\n"
+            if (typeof message == 'object') {
+                var out="";
+                out = JSON.stringify(message['args']['v'][0]['v']);
+                if (out=="\"bad input\""){
+                    out += "\n\nTip:\n1. check your indention\n2. check your function name\n3. Check with TA";
+                }
+                logger.innerHTML += out;
+            } else {
+                logger.innerHTML += message + '<br />';
+            }
+    }
+}
+            </script>
 
+        </div>
     </div>
 </section>
 
@@ -202,7 +230,6 @@
         <div class="row" style="margin-bottom :40px">
             <h2 class="glyphicon glyphicon-arrow-right"> 參考資料</h2>
         </div>
-
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -212,27 +239,27 @@
                 </tr>
             </thead>
             <tbody>
-
             <tr>
-                <td>Python3</td>
-                <td>Get to know Python3 more.</td>
+                <td>Python.org</td>
+                <td>Get to know Python more.</td>
                 <td>
                     <a href="https://www.python.org/">https://www.python.org/</a>
                 </td>
             </tr>
-
             <tr>
                 <td>Code Skulptor</td>
-                <td>Documentation about Skulptor.</td>
+                <td>Documentation about Code Skulptor.</td>
                 <td>
                     <a href="http://www.codeskulptor.org/docs.html#tabs-Python">http://www.codeskulptor.org/docs.html#tabs-Python</a>
                 </td>
             </tr>
-
-
-
             </tbody>
         </table>
+        <div class="container">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/N4mEzFDjqtA"frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>    
 </section>
 
@@ -241,23 +268,22 @@
         <div class="row" style="margin-bottom: 40px">
             <h2 class="glyphicon glyphicon-arrow-right"> 我們的團隊</h2>
         </div>
-
-        <div class="container" style="margin-top: 100px; margin-bottom: 100px">
-            <div class="col-sm-5"></div>
+        <div class="container" style="margin-top: 30px; margin-bottom: 30px">
+            <div class="col-sm-3"></div>
             <div class="col-sm-3">
                 <img src="./asset/img/icube.png" class="img-responsive img-circle" alt>
-                <h4 style="text-align: center">ICUBE</h4>
+                <h4 style="text-align: center">I CUBE</h4>
                 <p style="text-align: center">NCTU CS</p>
-                <a class="glyphicon glyphicon-comment ;btn btn-primary btn-lg" href ="https://www.facebook.com/nctuicube?fref=ts" style="margin-left: 45%; margin-top:30px"></a>
-
             </div>
+            <div class="col-sm-3">
+                <br><br><br>
+                <a class="btn btn-primary btn-lg" target="_blank" href="https://www.facebook.com/nctuicube?fref=ts" style="margin-left: 45%; margin-top:30px"><span class="glyphicon glyphicon-comment"></span>&nbsp Contact Us</a>
+            </div>
+            <div class="col-sm-3"></div>
         </div>
 
     </div>
 </section>
-
-
-
 
 <!-- jQuery -->
 <script src="./asset/js/jquery.js"></script>
@@ -272,5 +298,16 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="./asset/js/creative.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="./asset/bootstrap/js/bootstrap.min.js"></script>
+<script src="./asset/codeskulptor/jquery.flot.min.js"></script>
+<script src="./asset/codeskulptor/jquery.flot.axislabels.min.js"></script>
+<script src="./asset/codeskulptor/jquery.flot.orderbars.min.js"></script>
+<script src="./asset/codeskulptor/numeric-1.2.6.min.js"></script>
+<script src="./asset/codeskulptor/skulpt.min.js"></script>
+<script src="./asset/codeskulptor/skulpt-stdlib.js"></script>
 
 </body>
