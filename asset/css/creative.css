@@ -11,7 +11,7 @@ body {
 }
 
 body {
-    font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+    font-family: Helvetica, Arial, 'LiHei Pro', '微軟正黑體','新細明體', sans-serif;
 }
 
 hr {
@@ -178,7 +178,7 @@ header {
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: url(../img/header.jpg);
+    background-image: url(../img/header+.jpg);
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
