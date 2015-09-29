@@ -183,6 +183,22 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-2"><p>請選擇：</p></div>
+                <div class="col-md-3">
+                    <select class="form-control" id="python">
+                        <option value="own">Your Own Code</option>
+                        <option value="adventureoftom">Demo : Adventure of Tom</option>
+                        <option value="carrace">Demo : Car Race</option>
+                        <option value="pacman">Demo : PACMAN</option>
+                        <option value="starwars">Demo : Starwars</option>
+                        <option value="downstair">Demo : Doodle Jump</option>
+                    </select>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary" type="button" onclick="runs()">Run</button>
+                </div>
+                <!--
                 <button class="btn btn-primary" type="button" onclick="runit()">Run Own Code</button>
                 <button class="btn btn-info" type="button" onclick="rundemo('adventureoftom')">Demo : Adventure of Tom</button>
                 <button class="btn btn-info" type="button" onclick="rundemo('carrace')">Demo : Car Race</button>
@@ -190,11 +206,21 @@
                 <button class="btn btn-info" type="button" onclick="rundemo('starwars')">Demo : Starwars</button>
                 <button class="btn btn-info" type="button" onclick="rundemo('doodlejump')">Demo : Doodle Jump</button>
                 <button class="btn btn-info" type="button" onclick="rundemo('downstair')">Demo : 小朋友下樓梯</button>
-            </div>
+-->
+            </div><br>
             <h5>Demo 會跳出新視窗唷！</h5>
             <h5>手機版可能無法正常運作！</h5>
             <h5>Demo code from: <a target="_blank" href="http://www.codeskulptor.org/demos.html#tabs-Hall-of-Fame" >Codeskulptor</a></h5>
             <script type="text/javascript">
+function runs() {
+    file = $("#python").val();
+    console.log(file);
+    if(file == 'own'){
+        runit();
+    }else{
+        rundemo(file);
+    }
+};
 var code = CodeMirror.fromTextArea(document.getElementById("code"),{
 lineNumbers: true,
 mode:  "python"
@@ -242,21 +268,20 @@ function rundemo(x) {
     logger.innerHTML = "";
     try{
         $.ajax({
-url: './asset/demo/'+x+'.py',
-success: function(data) {
-document.getElementById("code").innerHTML = data;
-var	prog = data;
-code.doc.setValue(data);
-Sk.canvas = "mycanvas";
-Sk.pre = "output";
-Sk.configure({output:outf, read:builtinRead});
-eval(Sk.importMainWithBody("<stdin>",false,prog));
-}		
-});
-
-}
-catch(message){
-    logger.innerHTML="ERROR:\n"
+            url: './asset/demo/'+x+'.py',
+            success: function(data) {
+                document.getElementById("code").innerHTML = data;
+                var	prog = data;
+                code.doc.setValue(data);
+                Sk.canvas = "mycanvas";
+                Sk.pre = "output";
+                Sk.configure({output:outf, read:builtinRead});
+                eval(Sk.importMainWithBody("<stdin>",false,prog));
+            }		
+        });
+    }
+    catch(message){
+        logger.innerHTML="ERROR:\n"
         if (typeof message == 'object') {
             var out="";
             out = JSON.stringify(message['args']['v'][0]['v']);
@@ -267,10 +292,9 @@ catch(message){
         } else {
             logger.innerHTML += message + '<br />';
         }
+    }
 }
-}
-            </script>
-
+    </script>
         </div>
     </div>
 </section>
@@ -354,7 +378,7 @@ catch(message){
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-<script src="./asset/bootstrap/js/bootstrap.min.js"></script>
+<script src="./asset/js/bootstrap.min.js"></script>
 <script src="./asset/codeskulptor/jquery.flot.min.js"></script>
 <script src="./asset/codeskulptor/jquery.flot.axislabels.min.js"></script>
 <script src="./asset/codeskulptor/jquery.flot.orderbars.min.js"></script>
